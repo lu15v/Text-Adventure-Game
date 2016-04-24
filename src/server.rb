@@ -11,7 +11,7 @@ get '/' do
 end
 
 post '/' do
-  session[:playerN] = params[:playerN] || "Player_one"
+  session[:playerN] = params[:playerN].empty? &&  'PlayerOne' || params[:playerN]
   redirect '/game'
 end
 
