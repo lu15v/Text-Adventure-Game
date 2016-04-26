@@ -27,31 +27,36 @@
     <script type="text/javascript" src="js/wow.js"></script>
     <script type="text/javascript" src="js/classie.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+
   </head>
   <body>
-    <form method="post">
-      <div style="overflow:hidden;">
-        <header class="header" id="header"><!--header-start-->
-          <div class="container">
-            <figure class="logo animated fadeInDown delay-07s">
-              <a href="#"><img src="img/logo.png" alt=""></a>
-            </figure>
-            <h1 class="animated fadeInDown delay-07s">Werewolves & Wanderer</h1>
-            <ul class="we-create animated fadeInUp delay-1s">
-              <li>An amazing text adventure game </li>
-            </ul>
-            <input class="link animated fadeInUp delay-1s" type="submit" value="Play" />
-          </div>
-        </header><!--header-end-->
-      </div>
-
-      <footer class="footer">
+    <div style="overflow:hidden;">
+      <header class="header" id="header"><!--header-start-->
         <div class="container">
-          <span class="copyright">
-            Copyright &copy; 2016 | Game developed by Luis Ballinas &amp; Fernando Gomez
-          </span>
+          <figure class="logo animated fadeInDown delay-07s">
+            <a href="#"><img src="img/logo.png" alt=""></a>
+          </figure>
+          <h1 class="animated fadeInDown delay-07s">Werewolves & Wanderer</h1>
+          <ul class="we-create animated fadeInUp delay-1s">
+            <li>An amazing text adventure game </li>
+          </ul>
+          <form role="form">
+            <div class="form-group">
+              <label for="inputdefault">Put your name and lets play!!</label>
+              <input class="form-control" name="playerN" type="text">
+            </div>
+            </from>
+            <input class="link animated fadeInUp delay-1s" type="submit" value="Play" />
         </div>
-      </footer>
-    </form>
+      </header><!--header-end-->
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <span class="copyright">
+          Copyright &copy; 2016 | Game developed by Luis Ballinas &amp; Fernando Gomez
+        </span>
+      </div>
+    </footer>
   </body>
 </html>

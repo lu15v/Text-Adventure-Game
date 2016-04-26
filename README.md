@@ -7,9 +7,11 @@ Clone the repository with the following command:
 
 git clone https://github.com/lu15v/Text-Adventure-Game.git
 
-## Run application Search for the file server and then run as follows
+## Run application 
 
-ruby -I . server.rb
+Search for the file "server.rb" and then run as follows
+
+	ruby -I . server.rb
 
 And then have fun
 
