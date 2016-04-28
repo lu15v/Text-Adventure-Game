@@ -1,10 +1,14 @@
 class Room
-  attr_reader :description, :treasure, :monster, :movements
-
-  def initialize description, treasure, monster, movements
-    @description = description
-    @treasure = treasure
-    @monster = monster
-    @movements = movements
+  def self.description
+    self::DESCRIPTION
+  end
+  def self.treasure
+    self::TREASURE
+  end
+  def self.monster
+    self::MONSTER
+  end
+  def self.movements
+    self::MOVEMENTS
   end
 end
