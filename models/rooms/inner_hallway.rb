@@ -2,7 +2,7 @@ require_relative 'room'
 
 # Room 5
 class InnerHallway < room
-  # Hallway::DESCRIPTION
+  # InnerHallway::DESCRIPTION
   DESCRIPTION = %q{
     This inner hallway contains a door to the north,
     and one to the west, and a circular stairwell.

@@ -1,3 +1,4 @@
+require_relative 'room'
 # Room 9
 class Lift < Room
   DESCRIPTION = %q{

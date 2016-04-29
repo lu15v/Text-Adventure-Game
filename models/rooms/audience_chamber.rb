@@ -2,7 +2,7 @@ require_relative 'room'
 
 # Room 2
 class AudienceChamber < Room
-  # Hallway::DESCRIPTION
+  # AudienceChamber::DESCRIPTION
 
   DESCRIPTION = %q{
     This is the audience chamber

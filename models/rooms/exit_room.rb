@@ -1,3 +1,4 @@
+require_relative 'room'
 # Room 11
 class ExitRoom < Room
   DESCRIPTION = %q{
