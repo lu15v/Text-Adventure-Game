@@ -11,11 +11,11 @@ class InnerHallway < room
   }
 
 
-  MOVEMENTS = %q{
-    north: RoomN4
+  MOVEMENTS = {
+    north: PrivateMeeting
     south: StairWell
     east: NULL
-    west: RoomN3
+    west: GreatHall
     up: NULL
     down: NULL
   }

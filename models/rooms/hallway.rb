@@ -16,11 +16,11 @@ class Hallway < Room
 
   MONSTER = %q{ }
 
-  MOVEMENTS = %q{
+  MOVEMENTS = {
     north: NULL
-    south: RoomN2
+    south: AudienceChamber
     east: NULL
-    west: RoomN0
+    west: Entrance
     up: NULL
     down: NULL
   }

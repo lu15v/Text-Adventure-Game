@@ -7,9 +7,9 @@ class Lift < Room
   # LINE 1600 ???
 
 
-  MOVEMENTS = %q{
+  MOVEMENTS = {
     north: NULL
-    south: RoomN10
+    south: RearVestibule
     east: NULL
     west: NULL
     up: NULL

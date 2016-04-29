@@ -12,10 +12,10 @@ class AudienceChamber < Room
   }
 
 
-  MOVEMENTS = %q{
-    north: RoomN1
-    south: RoomN3
-    east: RoomN3
+  MOVEMENTS = {
+    north: Hallway
+    south: GreatHall
+    east: GreatHall
     west: NULL
     up: NULL
     down: NULL

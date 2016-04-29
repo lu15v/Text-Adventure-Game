@@ -6,10 +6,10 @@ class Entrance < Room
     stone castle. You are facing east.
   }
 
-  MOVEMENTS = %q{
+  MOVEMENTS = {
     north: NULL
     south: NULL
-    east: RoomN1
+    east: Hallway
     west: NULL
     up: NULL
     down: NULL

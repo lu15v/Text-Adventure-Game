@@ -8,9 +8,9 @@ class StoreRoom < Room
   }
 
 
-  MOVEMENTS = %q{
-    north: RoomN7
-    south: RoomN10
+  MOVEMENTS = {
+    north: Kitchen
+    south: RearVestibule
     east: NULL
     west: NULL
     up: NULL

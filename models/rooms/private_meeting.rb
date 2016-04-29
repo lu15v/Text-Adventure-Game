@@ -8,9 +8,9 @@ class PrivateMeeting < Room
     There is a single exit to the south
   }
 
-  MOVEMENTS = %q{
+  MOVEMENTS = {
     north: NULL
-    south: Room5N
+    south: InnerHallway
     east: NULL
     west: NULL
     up: NULL
