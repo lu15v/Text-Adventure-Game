@@ -11,4 +11,14 @@ class AudienceChamber < Room
     Doors leave this room to the north, east and south
   }
 
+
+  MOVEMENTS = %q{
+    north: RoomN1
+    south: RoomN3
+    east: RoomN3
+    west: NULL
+    up: NULL
+    down: NULL
+  }
+
 end

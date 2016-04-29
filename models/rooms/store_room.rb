@@ -6,4 +6,14 @@ class StoreRoom < Room
     provisions. There is a door to the North and
     one to the South.
   }
+
+
+  MOVEMENTS = %q{
+    north: RoomN7
+    south: RoomN10
+    east: NULL
+    west: NULL
+    up: NULL
+    down: NULL
+  }
 end

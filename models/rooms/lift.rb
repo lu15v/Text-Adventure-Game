@@ -5,4 +5,14 @@ class Lift < Room
     It slowly descends...
   }
   # LINE 1600 ???
+
+
+  MOVEMENTS = %q{
+    north: NULL
+    south: RoomN10
+    east: NULL
+    west: NULL
+    up: NULL
+    down: NULL
+  }
 end

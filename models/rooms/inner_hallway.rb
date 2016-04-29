@@ -10,4 +10,14 @@ class InnerHallway < room
     You can see an ornamental lake through the windows to the south
   }
 
+
+  MOVEMENTS = %q{
+    north: RoomN4
+    south: StairWell
+    east: NULL
+    west: RoomN3
+    up: NULL
+    down: NULL
+  }
+
 end

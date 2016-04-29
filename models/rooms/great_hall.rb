@@ -8,4 +8,14 @@ class GreatHall < Room
     there are doors to the east and to the north.
     In the alcove is a door to the west
   }
+
+
+  MOVEMENTS = %q{
+    north: RoomN2
+    south: NULL
+    east: RoomN5
+    west: NULL
+    up: NULL
+    down: NULL
+  }
 end

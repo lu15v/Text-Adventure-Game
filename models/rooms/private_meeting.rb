@@ -8,4 +8,13 @@ class PrivateMeeting < Room
     There is a single exit to the south
   }
 
+  MOVEMENTS = %q{
+    north: NULL
+    south: Room5N
+    east: NULL
+    west: NULL
+    up: NULL
+    down: NULL
+  }
+
 end
