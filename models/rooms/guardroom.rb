@@ -13,7 +13,7 @@ class Guardroom < Room
     south: NULL,
     east:  Dungeon,
     west:  NULL,
-    up:    NULL,
+    up:    InnerHallway,
     down:  NULL
   }
 end

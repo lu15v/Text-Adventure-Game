@@ -16,6 +16,6 @@ class UpperHallway < Room
     east:  NULL,
     west:  NULL,
     up:    NULL,
-    down:  NULL
+    down:  InnerHallway
   }
 end
