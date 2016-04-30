@@ -9,7 +9,6 @@ class GreatHall < Room
     In the alcove is a door to the west
   }
 
-
   MOVEMENTS = {
     north: AudienceChamber,
     south: nil,
@@ -18,4 +17,5 @@ class GreatHall < Room
     up:    nil,
     down:  nil
   }
+  
 end
