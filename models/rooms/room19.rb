@@ -10,10 +10,10 @@ class Room19 < Room
 #missing movement to the weird room 9 (see the map)
   MOVEMENTS = {
     north: Chambermaids,
-    south: NULL,
-    east:  NULL,
+    south: nil,
+    east:  nil,
     west:  Treasury,
-    up:    NULL,
-    down:  NULL
+    up:    nil,
+    down:  nil
   }
 end

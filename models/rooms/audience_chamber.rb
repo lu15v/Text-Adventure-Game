@@ -16,9 +16,9 @@ class AudienceChamber < Room
     north: Hallway,
     south: GreatHall,
     east:  GreatHall,
-    west:  NULL,
-    up:    NULL,
-    down:  NULL
+    west:  nil,
+    up:    nil,
+    down:  nil
   }
 
 end

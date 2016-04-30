@@ -8,11 +8,11 @@ class Entrance < Room
   }
 
   MOVEMENTS = {
-    north: NULL,
-    south: NULL,
+    north: nil,
+    south: nil,
     east:  Hallway,
-    west:  NULL,
-    up:    NULL,
-    down:  NULL
+    west:  nil,
+    up:    nil,
+    down:  nil
   }
 end

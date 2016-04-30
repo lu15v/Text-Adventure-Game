@@ -13,8 +13,8 @@ class InnerHallway < room
 
   MOVEMENTS = {
     north: PrivateMeeting,
-    south: NULL,
-    east:  NULL,
+    south: nil,
+    east:  nil,
     west:  GreatHall,
     up:    UpperHallway,
     down:  Guardroom

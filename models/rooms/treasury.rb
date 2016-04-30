@@ -9,10 +9,10 @@ class Treasury < Room
 
   MOVEMENTS = {
     north: Chambermaids,
-    south: NULL,
+    south: nil,
     east:  Room19,
-    west:  NULL,
-    up:    NULL,
-    down:  NULL
+    west:  nil,
+    up:    nil,
+    down:  nil
   }
 end

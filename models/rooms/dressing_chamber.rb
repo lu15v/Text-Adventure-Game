@@ -9,11 +9,11 @@ class DressingChamber < Room
   }
 
   MOVEMENTS = {
-    north: NULL,
+    north: nil,
     south: Chambermaids,
-    east:  NULL,
-    west:  NULL,
-    up:    NULL,
-    down:  NULL
+    east:  nil,
+    west:  nil,
+    up:    nil,
+    down:  nil
   }
 end

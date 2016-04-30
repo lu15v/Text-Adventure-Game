@@ -12,11 +12,11 @@ class MasterBedroom < Room
   }
 
   MOVEMENTS = {
-    north: NULL,
+    north: nil,
     south: UpperHallway,
     east:  Chambermaids,
-    west:  NULL,
-    up:    NULL,
-    down:  NULL
+    west:  nil,
+    up:    nil,
+    down:  nil
   }
 end

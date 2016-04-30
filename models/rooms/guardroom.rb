@@ -9,11 +9,11 @@ class Guardroom < Room
   }
 #Missing stairwell movement
   MOVEMENTS = {
-    north: NULL,
-    south: NULL,
+    north: nil,
+    south: nil,
     east:  Dungeon,
-    west:  NULL,
+    west:  nil,
     up:    InnerHallway,
-    down:  NULL
+    down:  nil
   }
 end

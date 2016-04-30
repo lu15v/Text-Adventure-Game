@@ -8,11 +8,11 @@ class Dungeon < Room
   }
 #Missing stairwell movement
   MOVEMENTS = {
-    north: NULL,
-    south: NULL,
-    east:  NULL,
+    north: nil,
+    south: nil,
+    east:  nil,
     west:  Guardroom,
-    up:    NULL,
-    down:  NULL
+    up:    nil,
+    down:  nil
   }
 end
