@@ -13,12 +13,12 @@ class AudienceChamber < Room
 
 
   MOVEMENTS = {
-    north: Hallway
-    south: GreatHall
-    east: GreatHall
-    west: NULL
-    up: NULL
-    down: NULL
+    north: Hallway,
+    south: GreatHall,
+    east:  GreatHall,
+    west:  NULL,
+    up:    NULL,
+    down:  NULL
   }
 
 end

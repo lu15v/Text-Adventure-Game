@@ -8,11 +8,11 @@ class Chambermaids < Room
   }
 
   MOVEMENTS = {
-    north: DressingChamber
-    south: NULL
-    east: Treasury
-    west: MasterBedroom
-    up: NULL
-    down: NULL
+    north: DressingChamber,
+    south: NULL,
+    east:  Treasury,
+    west:  MasterBedroom,
+    up:    NULL,
+    down:  NULL
   }
 end

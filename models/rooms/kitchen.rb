@@ -10,12 +10,12 @@ class Kitchen < Room
   }
 
   MOVEMENTS = {
-    north: NULL
-    south: StoreRoom
-    east: NULL
-    west: NULL
-    up: NULL
-    down: NULL
+    north: NULL,
+    south: StoreRoom,
+    east:  NULL,
+    west:  NULL,
+    up:    NULL,
+    down:  NULL
   }
 
 end

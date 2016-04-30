@@ -11,11 +11,11 @@ class UpperHallway < Room
   }
 #missing stairwell movement
   MOVEMENTS = {
-    north: MasterBedroom
-    south: NULL
-    east: NULL
-    west: NULL
-    up: NULL
-    down: NULL
+    north: MasterBedroom,
+    south: NULL,
+    east:  NULL,
+    west:  NULL,
+    up:    NULL,
+    down:  NULL
   }
 end

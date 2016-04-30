@@ -10,11 +10,11 @@ class StoreRoom < Room
 
 
   MOVEMENTS = {
-    north: Kitchen
-    south: RearVestibule
-    east: NULL
-    west: NULL
-    up: NULL
-    down: NULL
+    north: Kitchen,
+    south: RearVestibule,
+    east:  NULL,
+    west:  NULL,
+    up:    NULL,
+    down:  NULL
   }
 end

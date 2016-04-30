@@ -9,12 +9,12 @@ class PrivateMeeting < Room
   }
 
   MOVEMENTS = {
-    north: NULL
-    south: InnerHallway
-    east: NULL
-    west: NULL
-    up: NULL
-    down: NULL
+    north: NULL,
+    south: InnerHallway,
+    east:  NULL,
+    west:  NULL,
+    up:    NULL,
+    down:  NULL
   }
 
 end

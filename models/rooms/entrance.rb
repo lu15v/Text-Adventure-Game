@@ -8,11 +8,11 @@ class Entrance < Room
   }
 
   MOVEMENTS = {
-    north: NULL
-    south: NULL
-    east: Hallway
-    west: NULL
-    up: NULL
-    down: NULL
+    north: NULL,
+    south: NULL,
+    east:  Hallway,
+    west:  NULL,
+    up:    NULL,
+    down:  NULL
   }
 end

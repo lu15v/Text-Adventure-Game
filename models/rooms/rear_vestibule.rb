@@ -8,11 +8,11 @@ class RearVestibule < Room
 
 
   MOVEMENTS = {
-    north: StoreRoom
-    south: NULL
-    east: Lift
-    west: NULL
-    up: NULL
-    down: NULL
+    north: StoreRoom,
+    south: NULL,
+    east:  Lift,
+    west:  NULL,
+    up:    NULL,
+    down:  NULL
   }
 end

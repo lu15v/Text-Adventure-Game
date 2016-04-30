@@ -9,11 +9,11 @@ class Lift < Room
 
 
   MOVEMENTS = {
-    north: NULL
-    south: RearVestibule
-    east: NULL
-    west: NULL
-    up: NULL
-    down: NULL
+    north: NULL,
+    south: RearVestibule,
+    east:  NULL,
+    west:  NULL,
+    up:    NULL,
+    down:  NULL
   }
 end
