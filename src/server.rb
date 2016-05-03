@@ -1,13 +1,18 @@
+require 'rubygems'
+require 'bundler/setup'
+
 require 'sinatra'
 
-
-set :bind, '0.0.0.0'
 enable :sessions
+set :bind, '0.0.0.0'
 set :session_secret, 'SecretString#!$%'
-
 
 get '/' do
   erb :index
+end
+
+get '/console' do
+  erb :console
 end
 
 post '/' do
