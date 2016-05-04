@@ -3,7 +3,7 @@ class Game
 
   def initialize(player)
     @player = player
-    @current_room = InitialRoom
+    @current_room = Entrance
     @state = ExploringState
   end
 
