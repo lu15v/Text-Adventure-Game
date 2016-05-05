@@ -22,4 +22,9 @@ class ExploringState
   end
 
 
+  def magic
+    room = Room.random
+    return self.magic if room.name == "Entrance" || room.name == "Exit"
+    @game.current_room = room.name
+  end
 end
