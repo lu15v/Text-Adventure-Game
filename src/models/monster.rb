@@ -3,8 +3,5 @@ DB.create_table? :monsters do
   Integer :ferocity
 end
 class Monster < Sequel::Model
-  #def self.ferocity_factor
-    #self::FEROCITY_FACTOR
-  #end
 end
 Monster.unrestrict_primary_key
