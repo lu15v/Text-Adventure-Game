@@ -20,6 +20,7 @@ class FightingState
         puts "your armor increases your chance of success"
         new_ferocity = 3 * (@game.current_room_model.monster.ferocity / 4).to_i
       end
+
       has_sword = weapons.include? :sword
       has_axe = weapons.include? :axe
 
@@ -44,17 +45,20 @@ class FightingState
 
       #change to face 2
       #store first axe before sword
-      loop do
-        choice_weapon = gets.chomp.to_i
-        weapons.each_with_index do |weapon, i|
-            puts "#{i + 1} #{weapon}"
+      if not weapons.empty?
+        loop do
+          puts "choose your weapon"
+          choice_weapon = gets.chomp.to_i
+          weapons.each_with_index do |weapon, i|
+              puts "#{i + 1} #{weapon}"
+          end
+          if choice_weapon == 1
+            new_ferocity =  4 * (new_ferocity / 5).to_i
+          elsif choice_weapon == 2
+            new_ferocity =  3 * (new_ferocity / 4).to_i
+          end
+          break if choice_weapon >= 1 && choice_weapon <= weapons.length
         end
-        if choice_weapon == 1
-          new_ferocity =  4 * (new_ferocity / 5).to_i
-        elsif choice_weapon == 2
-          new_ferocity =  3 * (new_ferocity / 4).to_i
-        end
-        break if choice_weapon >= 1 && choice_weapon <= weapons.length
       end
 
       #change to face 3 THE BATTLE

@@ -1,3 +1,5 @@
+require 'set'
+
 class Player
   attr_accessor :name, :strength, :wealth, :food, :tally, :monsters_killed, :items
 
@@ -9,7 +11,8 @@ class Player
     @tally           = 0
     @monsters_killed = 0
     #changed from array to hash for ease the access to the items
-    @items           = Hash.new()
+    @items           = Hash.new
+    @items[:weapons] = Set.new
   end
   #example of items
   #  items = {
