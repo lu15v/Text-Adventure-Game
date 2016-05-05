@@ -13,11 +13,11 @@ class FightingState
     #omitted double ask for key line 740
     puts "Press any key to fight"
     if key != nil #the user has to put any key
-      new_ferocity = game.current_room.monster.ferocity
+      new_ferocity = @game.current_room.monster.ferocity
 
       if items.has_key? :suit
         puts "your armor increases your chance of success"
-        new_ferocity = 3 * (game.current_room.monster.ferocity / 4).to_i
+        new_ferocity = 3 * (@game.current_room.monster.ferocity / 4).to_i
       end
       has_sword = weapons.include? :sword
       has_axe = weapons.include? :axe
@@ -53,30 +53,30 @@ class FightingState
         elsif choice_weapon == 2
           new_ferocity =  3 * (new_ferocity / 4).to_i
         end
-        break if choice_weapon >= 1 && choice_weapon =< weapons.length
+        break if choice_weapon >= 1 && choice_weapon <= weapons.length
       end
 
       #change to face 3 THE BATTLE
       # TODO loop do line 940
       if rand() > 0.5
-        "Attacks"
+        puts "Attacks"
       else
-        "You attack"
+        puts "You attack"
       end
 
       if rand() > 0.5 && player.has_torch?
-        "Your Torch was knocked from your hand"
+        puts "Your Torch was knocked from your hand"
         items.delete :torch
       end
 
-      if rand() > 0.5 && items.has_key? :axe
-        "You drop your ace in the heat of battle"
+      if rand() > 0.5 && items.has_key?(:axe)
+        puts "You drop your ace in the heat of battle"
         items.delete :axe
         new_ferocity = 5 * (new_ferocity / 4).to_i
       end
 
-      if rand() > 0.5 && items.has_key? :sword
-        "Your Sword is knocked from your hand!!!"
+      if rand() > 0.5 && items.has_key?(:sword)
+        puts "Your Sword is knocked from your hand!!!"
         items.delete :sword
         new_ferocity = 4 * (new_ferocity / 3).to_i
       end
@@ -96,7 +96,7 @@ class FightingState
       end
 
       if rand() > 0.9
-        puts "*&%%$#$% $%# !! @ #$$# #$@! #$ $#$"
+        puts '*&%%$#$% $%# !! @ #$$# #$@! #$ $#$'
       end
 
       if rand() > 0.7
