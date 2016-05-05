@@ -1,9 +1,16 @@
+# Final Project: A Text Adventure Game
+# Date: 05-May-2016
+# Authors: A01020319 Fernando Gomez Herrera
+#          A01371743 Luis Eduardo Ballinas Aguilar
+
+#FightingState class, provides all the logic for handling a battle
+
 class FightingState
   def initialize(game)
     @game = game
   end
 
-
+  #Provides all the logic for fighting
   def handle
     return unless @game.current_room_model.monster
     #get the input for the user

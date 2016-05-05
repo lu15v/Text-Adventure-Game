@@ -1,8 +1,18 @@
+# Final Project: A Text Adventure Game
+# Date: 05-May-2016
+# Authors: A01020319 Fernando Gomez Herrera
+#          A01371743 Luis Eduardo Ballinas Aguilar
+
+#The ExploringState class, allows to the user: fight with a monster
+#see your currents status, use magic, consume food, valid movements
+#pick up treasures and so on
+#
 class ExploringState
   def initialize(game)
     @game = game
   end
 
+  #tally provides the current stats
   def tally
     rnd = rand()
     player = @game.player
@@ -14,7 +24,7 @@ class ExploringState
     end
 
   end
-
+  #Allows the player to change the current state of the game to FightingState
   def fight()
 
     game.state = FightingState
@@ -70,6 +80,8 @@ class ExploringState
       @game.state = WinnerState.new(@game) if @game.current_room == "Exit"
     end
   end
+
+  #Allows the user the probability to scape from a fight
   def run
     if rand > 0.7
       puts "No, you must stand and fight"
@@ -82,6 +94,7 @@ class ExploringState
     end
   end
 
+  # Allows the player to eat food
   def consume
     eated_food = 0;
     player = @game.player
@@ -98,6 +111,7 @@ class ExploringState
     player.strength = (player.strength + 5 * eated_food).to_i
   end
 
+  #Displays the cost of the items and what items you already have
   def inventory
     player = @game.player
     items = @game.player.items

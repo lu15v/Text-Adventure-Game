@@ -1,3 +1,8 @@
+# Final Project: A Text Adventure Game
+# Date: 05-May-2016
+# Authors: A01020319 Fernando Gomez Herrera
+#          A01371743 Luis Eduardo Ballinas Aguilar
+
 require_relative "states/exploring_state"
 class Game
   attr_accessor :player, :current_room, :state
@@ -16,7 +21,7 @@ class Game
     @current_room = "Entrance"
     @state = ExploringState.new self
   end
-
+ #to String method that shows the player name, the current room and the state.
   def to_s
     "Player: #{player.name} \nCurrent Room: #{@current_room} \nState: #{@state}"
   end

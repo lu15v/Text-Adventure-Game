@@ -9,6 +9,8 @@ DB.create_table? :movements do
   String :up
   String :down
 end
+
+#The Movement class, specifies the valid movements in the room
 class Movement < Sequel::Model
   def room
     Room[self.room_name]

@@ -1,5 +1,6 @@
 require 'set'
 
+#The Player class, provides all the variables and initial values of the player
 class Player
   attr_accessor :name, :strength, :wealth, :food, :tally, :monsters_killed, :items
 
@@ -21,6 +22,7 @@ class Player
   #  }
   #easy access to weapons, example: +items[:weapons].each+
 
+  #to String methods, provides the strength, wealth and the units of food of the player
   def to_s
     %Q{
       Your strength is #{@strength}.
