@@ -37,7 +37,16 @@ function sendCommand(event) {
   var command = input.val();
   console.log("Sending command " + command);
 
-  // TODO: send command to the server
+  $.ajax({
+    type: 'POST',
+    url: '/send_command',
+    data: {
+      command: input.val(),
+    },
+    success: function(data, textStatus, jqXHR) {
+      console.log("RESPONSE:", data);
+    }
+  });
   input.val('');
 }
 

@@ -19,9 +19,22 @@ class ExploringState
     output.string
   end
 
-  def handle
-    #command = gets.chomp
-    #puts "Doing #{command}..."
+  def handle(command)
+    puts "Doing #{command}..."
+    method = command
+    case command
+    when :north then method = :move
+    when :south then method = :move
+    when :east then method = :move
+    when :west then method = :move
+    when :up then method = :move
+    when :down then method = :move
+    end
+    if method == :move
+      self.send method, command
+    else
+      self.send method
+    end
   end
 
   def tally

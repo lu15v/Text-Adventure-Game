@@ -36,6 +36,10 @@ post '/' do
 end
 
 get '/status' do
+  get_status
+end
+
+def get_status
   game = session[:game]
   status = Hash.new
   status[:player] = game.player.name
@@ -45,6 +49,13 @@ get '/status' do
   status.to_json
 end
 
+post '/send_command' do
+  game = session[:game]
+  command = params[:command].to_sym
+  puts "EXECUTING COMMAND: #{command}"
+  game.state.handle command
+  get_status
+end
 
 get '/game' do
   @playerN = session[:playerN]
