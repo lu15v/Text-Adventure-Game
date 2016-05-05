@@ -1,4 +1,4 @@
-name,description,monster,treasure
+name,description,monster_id,treasure
 Entrance,"    You are at the entrance to a forbidding–Looking
     stone castle. You are facing east.",,
 Hallway,"    You are in the hallway

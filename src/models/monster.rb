@@ -3,5 +3,6 @@ DB.create_table? :monsters do
   Integer :ferocity
 end
 class Monster < Sequel::Model
+  one_to_many :rooms
 end
 Monster.unrestrict_primary_key

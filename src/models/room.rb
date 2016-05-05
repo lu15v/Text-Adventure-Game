@@ -1,5 +1,5 @@
 DB.create_table? :rooms do
-  foreign_key :monster, :monsters
+  foreign_key :monster_id, :monsters, type: String
 
   String :name, primary_key: true
   String :description
@@ -11,6 +11,7 @@ end
 #  a +monster+ that may or not be in the rrom
 #  and a +movements+ hash which has the directions in which the player can move to
 class Room < Sequel::Model
+  many_to_one :monster
   # Detailed (or not) description of the room. Common idiom is to use the +%q{}+ shorthand.
   # e.g.
   #   DESCRIPTION = %q{
@@ -55,4 +56,4 @@ class Room < Sequel::Model
   end
 end
 Room.unrestrict_primary_key
-Room.set_allowed_columns :name, :description, :monster, :treasure
+Room.set_allowed_columns :name, :description, :monster_id, :treasure

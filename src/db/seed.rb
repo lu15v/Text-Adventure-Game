@@ -40,7 +40,7 @@ puts "Creating rooms..."
 rooms.each do |r|
   Room.create(name:        r[0],
               description: r[1],
-              monster:     r[2],
+              monster_id:  r[2],
               treasure:    r[3].to_i)
 end
 puts "#{rooms.length} rooms created."
