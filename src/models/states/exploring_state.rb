@@ -9,7 +9,7 @@ class ExploringState
     total = 3 * player.tally + 5 * player.strength + 2 * player.wealth + player.food + 30 * player.monsters_killed
     puts "Tally at present is #{total}"
 
-    if rand > .5
+    if rand > 0.5
       puts "You have killed #{player.monsters_killed} so far.."
     end
 
@@ -22,6 +22,7 @@ class ExploringState
   end
 
 
+  # Moves the player to a random room using the amulet
   def magic
     room = Room.random
     return self.magic if room.name == "Entrance" || room.name == "Exit"
