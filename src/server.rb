@@ -31,8 +31,8 @@ get '/console' do
 end
 
 post '/' do
-  session[:playerN] = params[:playerN].empty? &&  'PlayerOne' || params[:playerN]
-  redirect '/game'
+  session[:game] = Game.new Player.new params[:player_name]
+  redirect '/console'
 end
 
 get '/status' do
@@ -55,9 +55,4 @@ post '/send_command' do
   puts "EXECUTING COMMAND: #{command}"
   game.state.handle command
   get_status
-end
-
-get '/game' do
-  @playerN = session[:playerN]
-  erb :game
 end
