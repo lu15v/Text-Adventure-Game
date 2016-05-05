@@ -5,19 +5,20 @@ class FightingState
 
 
   def handle
+    return unless @game.current_room_model.monster
     #get the input for the user
+    puts "Press any key to fight"
     key = gets.chomp
     player = @game.player
     items = @game.player.items
     weapons = items[:weapons]
     #omitted double ask for key line 740
-    puts "Press any key to fight"
     if key != nil #the user has to put any key
-      new_ferocity = @game.current_room.monster.ferocity
+      new_ferocity = @game.current_room_model.monster.ferocity
 
       if items.has_key? :suit
         puts "your armor increases your chance of success"
-        new_ferocity = 3 * (@game.current_room.monster.ferocity / 4).to_i
+        new_ferocity = 3 * (@game.current_room_model.monster.ferocity / 4).to_i
       end
       has_sword = weapons.include? :sword
       has_axe = weapons.include? :axe

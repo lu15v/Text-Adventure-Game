@@ -7,7 +7,7 @@ task :doc do
   sh 'rdoc --exclude "public/|views/" src'
 end
 task :sandbox do
-  sh 'pry -I . sandbox.rb'
+  sh 'ruby src/models/sandbox.rb'
 end
 task :seed do
   sh 'ruby -I . src/db/seed.rb'
