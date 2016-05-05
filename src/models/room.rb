@@ -12,6 +12,7 @@ end
 #  and a +movements+ hash which has the directions in which the player can move to
 class Room < Sequel::Model
   many_to_one :monster
+  one_to_one :movement, key: :room_name
   # Detailed (or not) description of the room. Common idiom is to use the +%q{}+ shorthand.
   # e.g.
   #   DESCRIPTION = %q{
