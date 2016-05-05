@@ -8,8 +8,14 @@ class ExploringState
     output = StringIO.new
     output << @game.player.to_s
     output << @game.current_room_model.description.to_s
-    output << @game.current_room_model.treasure.to_s
-    output << @game.current_room_model.monster.to_s
+    treasure = @game.current_room_model.treasure
+    if treasure && treasure > 0
+      output << "There are gems here valued $#{treasure}"
+    end
+    monster = @game.current_room_model.monster
+    if monster
+      output << @game.current_room_model.monster.to_s
+    end
     output.string
   end
 

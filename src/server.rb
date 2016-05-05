@@ -40,6 +40,8 @@ get '/status' do
   status = Hash.new
   status[:player] = game.player.name
   status[:info] = game.state.status
+  puts "STATUS"
+  puts status
   status.to_json
 end
 
