@@ -18,4 +18,10 @@ class Player
       Your provision sack holds #{@food} units of food.
     }
   end
+
+  # Returns true if the player is carrying a torch in his items
+  # false otherwise
+  def has_torch?
+    self.items.has_key? :torch
+  end
 end
