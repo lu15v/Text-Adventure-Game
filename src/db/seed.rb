@@ -2,18 +2,20 @@ require 'csv'
 require 'sequel'
 DB = Sequel.connect("sqlite://game.db") # in memory
 
-require_relative 'monster'
-require_relative 'room'
-require_relative 'movement'
+require_relative '../models/monster'
+require_relative '../models/room'
+require_relative '../models/movement'
 
 
 # Clean
 Room.dataset.delete
 Movement.dataset.delete
+roomscsv = File.join File.dirname(__FILE__), "rooms.csv"
 
-rooms = CSV.read("rooms.csv")
+rooms = CSV.read(roomscsv)
 rooms.shift
-movements = CSV.read("movements.csv")
+movementscsv = File.join File.dirname(__FILE__), "movements.csv"
+movements = CSV.read(movementscsv)
 movements.shift
 rooms.each do |r|
   puts "Creating rooms..."

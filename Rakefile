@@ -9,3 +9,6 @@ end
 task :sandbox do
   sh 'pry -I . sandbox.rb'
 end
+task :seed do
+  sh 'ruby -I . src/db/seed.rb'
+end
