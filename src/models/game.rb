@@ -1,12 +1,11 @@
-require_relative 'rooms/entrance.rb'
-
+require_relative "states/exploring_state"
 class Game
   attr_accessor :player, :current_room, :state
 
   def initialize(player)
     @player = player
-    @current_room = Entrance
-    @state = ExploringState
+    @current_room = "Entrance"
+    @state = ExploringState.new self
   end
 
   def to_s
