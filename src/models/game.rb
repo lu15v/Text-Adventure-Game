@@ -11,4 +11,9 @@ class Game
   def to_s
     "Player: #{player.name} \nCurrent Room: #{@current_room} \nState: #{@state}"
   end
+
+  # Returns the +Sequel::Model+ object for the current room
+  def current_room_model
+    Room[self.current_room]
+  end
 end
