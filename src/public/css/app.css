@@ -1,0 +1,36 @@
+html, body {
+  min-width: 800px;
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', helvetica, sans-serif;
+  background: #222;
+  color: #fff;
+  font-size: 20pt;
+  line-height: 1.5;
+  height: 100%;
+}
+.teletype-prefix, .teletype-cursor { color: #00bd9c; }
+
+
+.output {
+  display: block;
+  height: 500px;
+  min-height: 500px;
+  max-height: 500px;
+  font-size: 13pt;
+  padding: 4em;
+}
+.input {
+  height: 50%;
+}
+.input *, .input input {
+  background-color: rgba(0,0,0,0);
+  border: 0px;
+  color: #00bd9c;
+  font-size: 12pt;
+}
+.input span { width: 20%; }
+.input input { width: 70%; }
+.input input:focus {
+  border: 0px;
+}
