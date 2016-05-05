@@ -14,7 +14,7 @@ require_relative 'movement'
 require_relative 'states/fighting_state'
 
 game = Game.new Player.new "parzival"
-game.state = FightingState.new game
+game.state = ExploringState.new game
 
 binding.pry
 

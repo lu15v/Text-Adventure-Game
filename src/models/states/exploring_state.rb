@@ -42,4 +42,32 @@ class ExploringState
 
     # TODO: update room status
   end
+
+  # Move from one room to another
+  def move(direction)
+    movements = @game.current_room_model.movement
+    if direction == :north and not movements.north
+      return puts "No exit that way"
+    elsif direction == :south and not movements.south
+      return puts "There is no exit south"
+    elsif direction == :east and not movements.east
+      return puts "You cannot go in that direction"
+    elsif direction == :west and not movements.west
+      return puts "You cannot move through solid stone"
+    elsif direction == :up and not movements.up
+      return puts "You cannot go up this floor"
+    elsif direction == :down and not movements.down
+      return puts "You cannot go down this floor"
+    end
+
+    @game.current_room = movements.send(direction)
+    @game.player.tally += 1
+    @game.player.strength -= 5
+
+    if @game.player.strength < 1
+      @game.state = DeadState.new @game
+    else
+      @game.state = WinnerState.new(@game) if @game.current_room == "Exit"
+    end
+  end
 end
