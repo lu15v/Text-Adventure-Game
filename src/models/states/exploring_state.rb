@@ -7,14 +7,67 @@
 #see your currents status, use magic, consume food, valid movements
 #pick up treasures and so on
 #
+require 'json'
 class ExploringState
   def initialize(game)
     @game = game
   end
 
+  # Returns the current status of the state. This includes:
+  # - Player status
+  # - Room description
+  # - Room's treasure
+  # - Room's monster
+  def status
+    output = StringIO.new
+    output << @game.player.to_s
+    output << @game.current_room_model.description.to_s
+    treasure = @game.current_room_model.treasure
+    if treasure && treasure > 0
+      output << "There are gems here valued $#{treasure}"
+    end
+    monster = @game.current_room_model.monster
+    if monster
+      output << @game.current_room_model.monster.to_s
+    end
+    output.string
+  end
+
+  # Handles a command for this state.
+  # +command+ must be a symbol
+  # Possible commands:
+  # - :north : Moves you to north
+  # - :south : Moves you to south
+  # - :east : Moves you to east
+  # - :west : Moves you to west
+  # - :up : Moves you to up
+  # - :down : Moves you to down
+  # - :tally : Shows you the current score and number of monsters killed
+  # - :run : Tries to run from the current room
+  # - :magic : Uses the player's Amulet to randomly move to another room
+  # - :pick_up : Picks the room's treasure if there is any
+  # - :fight : Fights with the monster in the room
+  # - :consume : Eats food to gain strength
+  def handle(command)
+    puts "Doing #{command}..."
+    method = command
+    case command
+    when :north then method = :move
+    when :south then method = :move
+    when :east then method = :move
+    when :west then method = :move
+    when :up then method = :move
+    when :down then method = :move
+    end
+    if method == :move
+      self.send method, command
+    else
+      self.send method
+    end
+  end
+
   #tally provides the current stats
   def tally
-    rnd = rand()
     player = @game.player
     total = 3 * player.tally + 5 * player.strength + 2 * player.wealth + player.food + 30 * player.monsters_killed
     puts "Tally at present is #{total}"
@@ -24,13 +77,11 @@ class ExploringState
     end
 
   end
+
   #Allows the player to change the current state of the game to FightingState
   def fight()
-
-    game.state = FightingState
-
+    @game.state = FightingState.new @game
   end
-
 
   # Moves the player to a random room using the amulet
   def magic
