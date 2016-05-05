@@ -48,6 +48,11 @@ class Room < Sequel::Model
   #def self.movements
     #self::MOVEMENTS
   #end
+
+  # Gets a random room from the dataset of rooms
+  def self.random
+    Room.all.sample
+  end
 end
 Room.unrestrict_primary_key
 Room.set_allowed_columns :name, :description, :monster, :treasure
