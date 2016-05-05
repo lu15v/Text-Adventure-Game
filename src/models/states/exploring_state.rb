@@ -3,7 +3,7 @@ class ExploringState
     @game = game
   end
 
-  def tally()
+  def tally
     rnd = rand()
     player = game.player
     total = 3 * player.tally + 5 * player.strength + 2 * player.wealth + player.food + 30 * player.monsters_killed
@@ -18,7 +18,7 @@ class ExploringState
   def fight()
 
     game.state = FightingState
-    
+
   end
 
 

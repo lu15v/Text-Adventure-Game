@@ -8,8 +8,15 @@ class Player
     @food            = 0
     @tally           = 0
     @monsters_killed = 0
-    @items           = []
+    #changed from array to hash for ease the access to the items
+    @items           = Hash.new()
   end
+  #example of items
+  #  items = {
+  #     food: 10,
+  #     weapons: #{:axe, :sword }
+  #  }
+  #easy access to weapons, example: +items[:weapons].each+
 
   def to_s
     %Q{
