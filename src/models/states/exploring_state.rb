@@ -1,6 +1,21 @@
+require 'json'
 class ExploringState
   def initialize(game)
     @game = game
+  end
+
+  def status
+    output = StringIO.new
+    output << @game.player.to_s
+    output << @game.current_room_model.description.to_s
+    output << @game.current_room_model.treasure.to_s
+    output << @game.current_room_model.monster.to_s
+    output.string
+  end
+
+  def handle
+    #command = gets.chomp
+    #puts "Doing #{command}..."
   end
 
   def tally

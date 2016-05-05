@@ -1,4 +1,5 @@
 $(function() {
+  getGameStatus();
   $('.type-text' ).each( function() {
     var items = $( this ).text();
     items = items.split('.');
@@ -33,4 +34,17 @@ function sendCommand(event) {
 
   // TODO: send command to the server
   input.val('');
+}
+
+function getGameStatus() {
+  $.get("/status")
+    .success(function(data) {
+      console.log(data);
+      try {
+        data = JSON.parse(data);
+        $('#player_name').text(data.player + "@oasis $>");
+      } catch (e) {
+        alert("ERROR while parsing status");
+      }
+    });
 }
