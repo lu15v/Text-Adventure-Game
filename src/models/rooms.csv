@@ -1,0 +1,63 @@
+name,description,monster,treasure
+Entrance,"    You are at the entrance to a forbidding–Looking
+    stone castle. You are facing east.",,
+Hallway,"    You are in the hallway
+    From the dust on the ground you can tell
+    no-one has walked here for a long, long time.
+    There is a door to the south, through windows
+    to the north you can see a secret herb garden.",,
+AudienceChamber,"    This is the audience chamber
+    There is a window to the west. By looking to the right
+    Through it you can see the entrance to the castle.
+    Doors leave this room to the north, east and south.",,
+GreatHall,"    You are in the great hall, and l–shaped room,
+    there are doors to the east and to the north.
+    In the alcove is a door to the west",,
+PrivateMeeting,"    This is the monarch's private meeting room.
+    There is a single exit to the south.",,
+InnerHallway,"    This inner hallway contains a door to the north,
+    and one to the west, and a circular stairwell.
+    Passes through the room.
+    You can see an ornamental lake through the windows to the south",,
+Kitchen,"    This is the castle's kitchen through windows in,
+    the north wall you can see a secret herb garden.
+    A door leaves the kitchen to the south.",,
+StoreRoom,"   You are in the Store Room, amidst spices,
+    vegetables, and vast sacks of flour and other
+    provisions. There is a door to the North and
+    one to the South.",,
+RearVestibule,"    You are in the rear vestibule, there are windows
+    to the South from which you can see the ornamental lake.
+    There is an exit to the East, and one to the North.",,
+Exit,"    You've done it!!
+    That was the exit from the Castle.
+    YOU HAVE SUCCEEDED
+    You managed to get out of the Castle
+    Well done!",,
+Lift,"    You have entered the lift...
+    It slowly descends...",,
+Dungeon,"    You are in the dank, dark dungeon there is a single exit, a
+    small hole in wall towards the west.",,
+Guardroom,"    You are in the prison guardroom, in the basement of the castle.
+    The stairwell ends in this room. There is one other exit, a small
+    hole in the east wall.",,
+MasterBedroom,"    You are in the master bedroom on the upper level
+    of the castle....
+    Looking down from the window to the west you can see
+    the entrance to the castle, while the secret herb garden
+    is visible below the north window. There are doors to the
+    east and to the south...",,
+Chambermaid'sBedroom,"    Oooh...You are in the cambermaids bedroom,
+    there is an exit to the west and a door to the south...",,
+DressingChamber,"    This is tiny room on the upper leve is the dressing chamber.
+    There is a window to the north, a view of the herb garden down
+    below. A door leaves to the south.",,
+Treasury,"    This room was used as the castle treasury in by-gone years...
+    There are no windows, just exits to the north and to the east.",,
+UpperHallway,"    This is the l-Shapped upper hallway.
+    To the north is a door, and there is a
+    stairwell in the hall as well. You can see
+    the lake through the south windows.",,
+Room19,"    This is the small room outside the castle lift which can be
+    entered by a door to the north, another door leads to the weast.
+    You can see the lake through the southern windows.",,

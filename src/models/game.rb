@@ -1,3 +1,5 @@
+require_relative 'rooms/entrance.rb'
+
 class Game
   attr_accessor :player, :current_room, :state
 
