@@ -6,3 +6,6 @@ end
 task :doc do
   sh 'rdoc --exclude "public/|views/" src'
 end
+task :sandbox do
+  sh 'pry -I . sandbox.rb'
+end
