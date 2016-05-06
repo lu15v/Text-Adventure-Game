@@ -54,5 +54,6 @@ post '/send_command' do
   command = params[:command].to_sym
   puts "EXECUTING COMMAND: #{command}"
   game.state.handle command
+  session[:game] = game
   get_status
 end

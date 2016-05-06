@@ -11,8 +11,7 @@ html, body {
 }
 .teletype-prefix, .teletype-cursor { color: #00bd9c; }
 
-
-.output {
+#output {
   display: block;
   height: 500px;
   min-height: 500px;
@@ -21,17 +20,17 @@ html, body {
   padding: 4em;
   overflow: scroll;
 }
-.input {
+#input {
   height: 50%;
 }
-.input *, .input input {
+#input *, #input input {
   background-color: rgba(0,0,0,0);
   border: 0px;
   color: #00bd9c;
   font-size: 12pt;
 }
-.input span { width: 20%; }
-.input input { width: 70%; }
-.input input:focus {
+#input span { width: 20%; }
+#input input { width: 70%; }
+#input input:focus {
   border: 0px;
 }
