@@ -30,8 +30,8 @@ class ExploringState
 
     monster = @game.current_room_model.monster
     if monster
-      output << "\nDANGER... THERE IS A MONSTER HERE....\n"
-      output << @game.current_room_model.monster.to_s
+      output << "\nDANGER... THERE IS A MONSTER HERE....\n\n"
+      output << "#{@game.current_room_model.monster}\n\n"
     end
 
     output.string
@@ -63,11 +63,18 @@ class ExploringState
     when :up    then method = :move
     when :down  then method = :move
     end
+
+    output = ""
     if method == :move
-      self.send method, command
+      output << self.send(method, command)
     else
-      self.send method
+      output << self.send(method)
     end
+
+    output << "\n"
+    output << self.status
+
+    output
   end
 
   # Returns the current player's score
@@ -92,6 +99,8 @@ class ExploringState
     room = Room.random
     return self.magic if room.name == "Entrance" || room.name == "Exit"
     @game.current_room = room.name
+
+    "You moved to another room...\n"
   end
 
   # Pick-up the treasure in the room if there is any
@@ -135,7 +144,7 @@ class ExploringState
       @game.state = WinnerState.new(@game) if @game.current_room == "Exit"
     end
 
-    self.status
+    "You moved to another room..."
   end
 
   #Allows the user the probability to scape from a fight

@@ -10,7 +10,8 @@ require 'sequel'
 DB ||= Sequel.connect("sqlite://game.db") # in memory
 
 DEPENDENCIES ||= ['models/game', 'models/player', 'models/monster', 'models/room',
-                'models/movement', 'models/states/fighting_state']
+                'models/movement', 'models/states/fighting_state',
+                'models/states/exploring_state']
 DEPENDENCIES.each { |file| also_reload file } if development?
 DEPENDENCIES.each { |file| require_relative file }
 
