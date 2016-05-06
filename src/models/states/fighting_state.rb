@@ -141,6 +141,9 @@ class FightingState
       end
       @game.state = ExploringState.new @game
 
+      output << "\n"
+      output << @game.state.status
+
       output
   end
 end

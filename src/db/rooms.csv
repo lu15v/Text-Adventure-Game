@@ -10,9 +10,12 @@ AudienceChamber,"    This is the audience chamber
     There is a window to the west. By looking to the right
     Through it you can see the entrance to the castle.
     Doors leave this room to the north, east and south.",,
-GreatHall,"    You are in the great hall, and l–shaped room,
-    there are doors to the east and to the north.
-    In the alcove is a door to the west",Sheng Long,8
+GreatHall,"    You are in the great hall, and L–Shaped room,
+    There are doors to the east and to the north.
+    The wood panels are warped and faded...
+
+    As you stand there, you hear a mouse scamper along,
+    The floor behind you... You whirl around... but see nothing!",Sheng Long,8
 PrivateMeeting,"    This is the monarch's private meeting room.
     There is a single exit to the south.",MaloventyMaldemer,
 InnerHallway,"    This inner hallway contains a door to the north,
