@@ -11,5 +11,11 @@ end
 #The Monster class, provide a monster in a specific room
 class Monster < Sequel::Model
   one_to_many :rooms
+
+  # String representation of a monster in the format:
+  #   #{@name} | FF: #{@ferocity}
+  def to_s
+    "#{self.name} | Ferocity: #{self.ferocity}"
+  end
 end
 Monster.unrestrict_primary_key

@@ -21,15 +21,19 @@ class ExploringState
   def status
     output = StringIO.new
     output << @game.player.to_s
-    output << @game.current_room_model.description.to_s
+    output << "\n"
+
+    output << "#{@game.current_room_model.description}\n"
+
     treasure = @game.current_room_model.treasure
-    if treasure && treasure > 0
-      output << "There are gems here valued $#{treasure}"
-    end
+    output << "\nThere is treasure here worth $#{treasure}.\n" if treasure && treasure > 0
+
     monster = @game.current_room_model.monster
     if monster
+      output << "\nDANGER... THERE IS A MONSTER HERE....\n"
       output << @game.current_room_model.monster.to_s
     end
+
     output.string
   end
 

@@ -17,7 +17,7 @@ html, body {
   min-height: 500px;
   max-height: 500px;
   font-size: 13pt;
-  padding: 4em;
+  padding: 2em 0;
   overflow: scroll;
 }
 #input {
