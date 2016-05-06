@@ -25,9 +25,11 @@ class Player
   #to String methods, provides the strength, wealth and the units of food of the player
   def to_s
     %Q{
+      ---------------------------------------------------------
       Your strength is #{@strength}.
       You have $#{@wealth}.
       Your provision sack holds #{@food} units of food.
+      ---------------------------------------------------------
     }
   end
 
