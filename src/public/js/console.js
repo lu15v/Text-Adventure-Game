@@ -1,7 +1,7 @@
 var STATUS = {};
 var VALID_COMMANDS = {
   "ExploringState": ["north", "south", "east", "west", "up", "down",
-      "magic", "run", "fight", "tally", "consume", "pick up"],
+      "magic", "run", "fight", "tally", "consume", "pick_up"],
   "FightingState": ["1", "2"],
 };
 
@@ -63,7 +63,7 @@ function validCommand(command) {
 function sendCommand(event) {
   event.preventDefault();
   var input = $('#user_input');
-  var command = input.val();
+  var command = input.val().toLowerCase().replace(/\s+/g, '_');
   if (!command) return;
   if (!validCommand(command)) return;
   console.log("Sending command " + command);
@@ -73,7 +73,7 @@ function sendCommand(event) {
   $.ajax({
     type: 'POST',
     url: '/send_command',
-    data: { command: input.val(), },
+    data: { command: command },
     success: function(data, textStatus, jqXHR) {
       console.log("RESPONSE:", data);
       try { data = JSON.parse(data); } catch (e) { alert("ERROR parsin JSON"); }

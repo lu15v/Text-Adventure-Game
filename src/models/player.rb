@@ -30,9 +30,9 @@ class Player
     @tally           = 0
     @monsters_killed = 0
     @items           = Hash.new
-    @items[:toch] = true
-    @items[:amulet] = true
-    @items[:suit] = true
+    @items[:torch]   = true
+    @items[:amulet]  = true
+    @items[:suit]    = true
     @items[:weapons] = Set.new [:axe, :sword]
   end
 
