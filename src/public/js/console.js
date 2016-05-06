@@ -69,7 +69,7 @@ function sendCommand(event) {
   console.log("Sending command " + command);
 
   if (CURRENT_STATE == "FightingState") return handleFight(command);
-
+  if (command == "run") return handleRun();
   $.ajax({
     type: 'POST',
     url: '/send_command',
@@ -134,4 +134,29 @@ function handleFight(command) {
 
 function hasMonster() {
   return STATUS.monster;
+}
+
+function handleRun(){
+  if(Math.random() > 0.7){
+    output =  "No, you must stand and fight";
+    updateOutput(output);
+    $.ajax({
+      type: 'POST',
+      url: '/send_command',
+      data: { command: "fight", },
+      success: function(data, textStatus, jqXHR) {
+        console.log("RESPONSE:", data);
+        try { data = JSON.parse(data); } catch (e) { alert("ERROR parsin JSON"); }
+        if (data) {
+          STATUS = data;
+          CURRENT_STATE = data.state;
+        }
+        updateOutput(data.output);
+      }
+    });
+  }else{
+    var output = "Which way do you want to flee?";
+    updateOutput(output);
+  }
+
 }

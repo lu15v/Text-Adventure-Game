@@ -14,6 +14,7 @@ class ExploringState
     @game = game
   end
 
+
   # Returns the current status of the state. This includes:
   # - Player status
   # - Room description
@@ -165,15 +166,15 @@ class ExploringState
   end
 
   #Allows the user the probability to scape from a fight
-  def run
+  def run(direction)
+    output = ""
     if rand > 0.7
-      puts "No, you must stand and fight"
+      output << "No, you must stand and fight"
       game.state = FightingState.new game
-      game.state.handle
+      output << game.state.handle
+      return output
     else
-      puts "Which way do you want to flee?"
-      move_to = gets
-      move move_to
+      move direction
     end
   end
 
