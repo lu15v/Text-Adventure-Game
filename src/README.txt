@@ -44,7 +44,7 @@ The root of the documentation should now be available at: +game/doc/index.html+
 
 == 4+1 Architectural View Model
 
-- \Check out all the diagrams created for the game in the following {link}[www.dropbox.com/s/nl09mgx3vxmpjzq/Warewolves_and_wanderers.pdf?dl=0].
+- \Check out all the diagrams created for the game in the following {link.}[http://dropbox.com/s/nl09mgx3vxmpjzq/Warewolves_and_wanderers.pdf?dl=0].
 === Logical View
 
 link:../images/UML.png

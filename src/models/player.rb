@@ -2,8 +2,26 @@ require 'set'
 
 #The Player class, provides all the variables and initial values of the player
 class Player
-  attr_accessor :name, :strength, :wealth, :food, :tally, :monsters_killed, :items
+  # Player's name
+  attr_accessor :name
+  # Player's strength. Initially it takes a random value between [60 160] inclusive.
+  attr_accessor :strength
+  # Player's wealth. Initially it takes a random value between [30 130] inclusive.
+  attr_accessor :wealth
+  # Players' reserve of food. Starts in zero.
+  attr_accessor :food
+  # Player's movement count. It counts how many times the player has moved across rooms.
+  attr_accessor :tally
+  # Player's monster killed counter. How many monsters the player has killed.
+  attr_accessor :monsters_killed
+  # Player's items in inventory. e.g.
+  #   items = {
+  #     food: 10,
+  #     weapons: #{:axe, :sword }
+  #   }
+  attr_accessor :items
 
+  # Creates a new Player with a given name
   def initialize(name)
     @name            = name
     @strength        = 60 + rand(1..100) # LINE 2620
@@ -11,19 +29,12 @@ class Player
     @food            = 0
     @tally           = 0
     @monsters_killed = 0
-    #changed from array to hash for ease the access to the items
     @items           = Hash.new
     @items[:toch] = true
     @items[:amulet] = true
     @items[:suit] = true
     @items[:weapons] = Set.new [:axe, :sword]
   end
-  #example of items
-  #  items = {
-  #     food: 10,
-  #     weapons: #{:axe, :sword }
-  #  }
-  #easy access to weapons, example: +items[:weapons].each+
 
   #to String methods, provides the strength, wealth and the units of food of the player
   def to_s
