@@ -1,7 +1,11 @@
-class WinnerState
+class LostState
+
+  def initialize(game)
+    @game = game
+  end
 
   def hande
-    output =""
+    output = ""
 
     output << "You are dead!!!"
     output << "Game Over"

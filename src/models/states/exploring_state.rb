@@ -36,8 +36,10 @@ class ExploringState
       output << "#{@game.current_room_model.monster}\n\n"
     end
 
-    output << "\nWhat do you want to do? "
-
+    if @game.current_room_model.name != "Exit"
+      output << "\nWhat do you want to do? "
+    end
+    
     output.string
   end
 
