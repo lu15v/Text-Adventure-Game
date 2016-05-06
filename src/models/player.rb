@@ -45,4 +45,12 @@ class Player
   def weapons
     self.items[:weapons]
   end
+
+  # Returns the player's score so far. It is calculated as follows:
+  #   SCORE = 3*TALLY + 5*STRENGTH + 2*WEALTH + FOOD + 30*MONSTERS_KILLED
+  # Notice that the number of monsters killed has more effect
+  # on your final score than just about any other item.
+  def score
+    3*@tally + 5*@strength + 2*@wealth + @food + 30*@monsters_killed
+  end
 end
