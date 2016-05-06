@@ -34,21 +34,28 @@ post '/' do
 end
 
 get '/status' do
-  get_status
+  get_status.to_json
 end
 
 def get_status
   game = session[:game]
   status = Hash.new
   status[:player] = game.player.name
+  status[:weapons]  = game.player.weapons.to_a
+  status[:monster] = game.current_room_model.monster != nil
   status[:output] = game.state.status
+  status[:state] = game.state.class.to_s
   puts "STATUS"
   puts status
-  status.to_json
+
+  status
 end
 
 post '/send_command' do
   status = Hash.new
+
+  puts "PARAMS"
+  p params
 
   game = session[:game]
   command = params[:command].to_sym
@@ -57,7 +64,28 @@ post '/send_command' do
   output = game.state.handle command
   puts output
   status[:output] = output
-  session[:game] = game
+  status[:player] = game.player.name
+  status[:weapons]  = game.player.weapons.to_a
+  status[:monster] = game.current_room_model.monster != nil
+  status[:output] = game.state.status
+  status[:state] = game.state.class.to_s
+
+  status.to_json
+end
+
+post '/fight' do
+  status = get_status
+
+  puts "PARAMS"
+  p params
+
+  game = session[:game]
+  weapon = params[:weapon].to_sym
+  puts "FIGHTING WITH WEAPON: #{weapon}"
+  output = game.state.handle weapon
+  puts output
+  status = get_status
+  status[:output] = output
 
   status.to_json
 end

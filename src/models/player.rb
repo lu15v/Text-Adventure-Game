@@ -13,7 +13,10 @@ class Player
     @monsters_killed = 0
     #changed from array to hash for ease the access to the items
     @items           = Hash.new
-    @items[:weapons] = Set.new
+    @items[:toch] = true
+    @items[:amulet] = true
+    @items[:suit] = true
+    @items[:weapons] = Set.new [:axe, :sword]
   end
   #example of items
   #  items = {

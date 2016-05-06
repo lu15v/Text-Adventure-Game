@@ -7,7 +7,8 @@
 #see your currents status, use magic, consume food, valid movements
 #pick up treasures and so on
 #
-require 'json'
+require_relative 'fighting_state'
+
 class ExploringState
   def initialize(game)
     @game = game
@@ -33,6 +34,8 @@ class ExploringState
       output << "\nDANGER... THERE IS A MONSTER HERE....\n\n"
       output << "#{@game.current_room_model.monster}\n\n"
     end
+
+    output << "\nWhat do you want to do? "
 
     output.string
   end
@@ -90,8 +93,18 @@ class ExploringState
   end
 
   #Allows the player to change the current state of the game to FightingState
-  def fight()
+  def fight
+    monster = @game.current_room_model.monster
+    player = @game.player
+    return unless monster
+
     @game.state = FightingState.new @game
+
+    if not player.weapons.empty?
+      @game.state.status # Ask for weapon
+    else
+      @game.state.handle( nil ) # Start the fight directly
+    end
   end
 
   # Moves the player to a random room using the amulet
@@ -177,92 +190,10 @@ class ExploringState
     player.strength = (player.strength + 5 * eated_food).to_i
   end
 
-  #Displays the cost of the items and what items you already have
+  # Transitions to the buying state
   def inventory
-    player = @game.player
-    items = @game.player.items
-    weapons = items[:weapons]
-    puts "Provisions & Inventory"
-    if player.wealth < 0.1
-      return
-    end
-    puts "You can buy 1- Flamming Torch ($15)"
-    puts "2 - Axe ($10)"
-    puts "3 - Sword ($20)"
-    puts "4 - Food ($2 per unit)"
-    puts "5 - Magic Amulet ($30)"
-    puts "6 - Suit of Armor ($50)"
-    puts "0 - To continue adventure"
+    @game.state = BuyingState.new @game
 
-    option = gets.to_i
-
-    if items.has_key? :torch
-      puts "You have the torch"
-    end
-
-    if weapons.include? :axe
-      puts "Your supplies now include one axe"
-    end
-
-    if weapons.include? :sword
-      puts "You should guard your sword well"
-    end
-
-    if items.has_key? :amulet
-      puts "Your amulet will aid you in times of stress"
-    end
-
-    if items.has_key? :suit
-      puts "You look goog in armor"
-    end
-
-    if option == 1
-      player.wealth -= 15
-      items[:torch] = 1
-    end
-    if option == 2
-      player.wealth -= 10
-      items[:weapons] << :axe
-    end
-    if option == 3
-      player.wealth -= 20
-      items[:weapons] << :sword
-    end
-    if option == 5
-      player.wealth -= 30
-      items[:amulet] = 1
-    end
-    if option == 6
-      player.wealth -= 50
-      items[:suit] = 1
-    end
-
-    if player.wealth < 0
-      puts "You have tried to cheat me!"
-      items = Hash.new
-      player.food = (player.food / 4).to_i
-    end
-
-    if option != 4
-      if player.wealth >0
-        puts "You have $#{player.wealth}"
-      end
-      if player.wealth == 0
-        puts "You have no money"
-      end
-    else
-      loop do
-        puts "How many units of food "
-        quantity = gets.to_i
-        if quantity * 2 > player.wealth
-          puts "You haven't got enough money"
-        end
-        if quantity * 2 <= player.wealth
-          player.food += quantity
-          player.wealth -= 2 * quantity
-          break
-        end
-      end
-    end
+    @game.state.handle
   end
 end
