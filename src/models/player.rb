@@ -38,4 +38,11 @@ class Player
   def has_torch?
     self.items.has_key? :torch
   end
+
+  # Returns the weapons that the player is carrying as a set of symbols
+  # e.g.
+  #   player.weapons => #<Set: { :axe }>
+  def weapons
+    self.items[:weapons]
+  end
 end
