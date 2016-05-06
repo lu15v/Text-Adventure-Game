@@ -133,6 +133,8 @@ class ExploringState
   # Move from one room to another
   def move(direction)
     movements = @game.current_room_model.movement
+    monster = @game.current_room_model.monster
+
     if direction == :north and not movements.north
       return "No exit that way"
     elsif direction == :south and not movements.south
@@ -146,6 +148,8 @@ class ExploringState
     elsif direction == :down and not movements.down
       return "You cannot go down this floor"
     end
+
+    return "Monster shouts: YOU SHALL NOT PASS!!" if monster && rand < 0.1
 
     @game.current_room = movements.send(direction)
     @game.player.tally += 1

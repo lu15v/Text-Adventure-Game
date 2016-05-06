@@ -60,15 +60,10 @@ post '/send_command' do
   game = session[:game]
   command = params[:command].to_sym
   puts "EXECUTING COMMAND: #{command}"
-  puts "HADNLE RESULT"
   output = game.state.handle command
   puts output
+  status = get_status
   status[:output] = output
-  status[:player] = game.player.name
-  status[:weapons]  = game.player.weapons.to_a
-  status[:monster] = game.current_room_model.monster != nil
-  status[:output] = game.state.status
-  status[:state] = game.state.class.to_s
 
   status.to_json
 end
