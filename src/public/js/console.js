@@ -30,12 +30,16 @@ function updateOutput(info) {
       humanise: false,
       callbackFinished: function (teletype) {
         console.log("FINISHED");
+        scrollBottom();
       },
       callbackNext: function(current, teletype) {
-        var el = $('#output');
-        el.scrollTop(el.height()); // Auto scroll to the bottom line
+        scrollBottom();
       }
   });
+}
+function scrollBottom() {
+  var el = $('#output');
+  el.scrollTop(el.prop("scrollHeight")); // Auto scroll to the bottom line
 }
 
 function validCommand(command) {
@@ -58,7 +62,11 @@ function sendCommand(event) {
     data: { command: input.val(), },
     success: function(data, textStatus, jqXHR) {
       console.log("RESPONSE:", data);
-      getGameStatus();
+      //getGameStatus();
+      try { data = JSON.parse(data); } catch (e) {
+        alert("ERROR parsin JSON");
+      }
+      updateOutput(data.output);
     }
   });
   input.val('');
@@ -76,6 +84,6 @@ function getGameStatus() {
         console.error(e);
       }
       $('#player_name').text(data.player + "@oasis $>");
-      updateOutput(data.info);
+      updateOutput(data.output);
     });
 }

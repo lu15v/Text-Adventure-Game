@@ -70,11 +70,16 @@ class ExploringState
     end
   end
 
-  #tally provides the current stats
+  # Returns the current player's score
   def tally
     player = @game.player
-    puts "Tally at present is #{player.score}"
-    puts "You have killed #{player.monsters_killed} so far.." if rand > 0.5
+    output = ""
+    output << "Tally at present is #{player.score}\n"
+    output << "You have killed #{player.monsters_killed} monsters so far..\n" if rand > 0.5
+
+    puts output
+
+    output
   end
 
   #Allows the player to change the current state of the game to FightingState

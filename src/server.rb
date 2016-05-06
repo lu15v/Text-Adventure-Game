@@ -43,17 +43,20 @@ def get_status
   game = session[:game]
   status = Hash.new
   status[:player] = game.player.name
-  status[:info] = game.state.status
+  status[:output] = game.state.status
   puts "STATUS"
   puts status
   status.to_json
 end
 
 post '/send_command' do
+  status = Hash.new
+
   game = session[:game]
   command = params[:command].to_sym
   puts "EXECUTING COMMAND: #{command}"
-  game.state.handle command
+  status[:output] = game.state.handle command
   session[:game] = game
-  get_status
+
+  status.to_json
 end
