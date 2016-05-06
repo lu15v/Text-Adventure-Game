@@ -73,13 +73,8 @@ class ExploringState
   #tally provides the current stats
   def tally
     player = @game.player
-    total = 3 * player.tally + 5 * player.strength + 2 * player.wealth + player.food + 30 * player.monsters_killed
-    puts "Tally at present is #{total}"
-
-    if rand > 0.5
-      puts "You have killed #{player.monsters_killed} so far.."
-    end
-
+    puts "Tally at present is #{player.score}"
+    puts "You have killed #{player.monsters_killed} so far.." if rand > 0.5
   end
 
   #Allows the player to change the current state of the game to FightingState
