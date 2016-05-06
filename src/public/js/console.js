@@ -11,15 +11,14 @@ $(function() {
 function removeCursor() {
   $('.teletype-cursor').remove();
 }
-function updateOutput(info, callback) {
+function updateOutput(info) {
   removeCursor();
   var data = info.split('\n').map(function(el) {
     return el + "\\n";
   });
-  data.push("\\nWhat do you want to do?");
+  data.push("\\nWhat do you want to do? ");
   var dom = $('<p>');
   $('#output').append(dom);
-  console.log(dom);
   dom.teletype({
       text: data,
       typeDelay: 10,
@@ -31,15 +30,27 @@ function updateOutput(info, callback) {
       humanise: false,
       callbackFinished: function (teletype) {
         console.log("FINISHED");
+      },
+      callbackNext: function(current, teletype) {
+        var el = $('#output');
+        el.scrollTop(el.height()); // Auto scroll to the bottom line
       }
   });
+}
+
+function validCommand(command) {
+    var VALID_COMMANDS = ["north", "south", "east", "west", "up", "down",
+      "magic", "run", "fight", "tally", "consume", "pick up"];
+    return VALID_COMMANDS.indexOf(command) >= 0;
 }
 
 function sendCommand(event) {
   event.preventDefault();
   var input = $('#user_input');
   var command = input.val();
+  if (!command) return;
   console.log("Sending command " + command);
+  if (!validCommand(command)) return;
 
   $.ajax({
     type: 'POST',
@@ -65,10 +76,6 @@ function getGameStatus() {
         console.error(e);
       }
       $('#player_name').text(data.player + "@oasis $>");
-      updateOutput(data.info, requestInput);
+      updateOutput(data.info);
     });
-}
-
-function requestInput(teletype) {
-  console.log("AGAIN");
 }
