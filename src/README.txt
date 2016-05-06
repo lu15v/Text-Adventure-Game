@@ -32,7 +32,7 @@ Next, you have to seed the database using the following command:
 Finally you can start the application with:
   rake server (or just rake)
 
-Afterwards, point your web brower at the following URL: +http://localhost:4567/+
+Afterwards, point your web browser at the following URL: +http://localhost:4567/+
 
 == Documentation
 This is the command used to produce this documentation (running it from the +game+ directory):
@@ -44,8 +44,7 @@ The root of the documentation should now be available at: +game/doc/index.html+
 
 == 4+1 Architectural View Model
 
-You must use Philippe Kruchten's <b>“4+1 View Model”</b> to document your application's architecture. I suggest using the {draw.io}[https://www.draw.io/] site to produce the required UML diagrams.
-
+- \Check out all the diagrams created for the game in the following {link}[www.dropbox.com/s/nl09mgx3vxmpjzq/Warewolves_and_wanderers.pdf?dl=0].
 === Logical View
 
 link:../images/UML.png
@@ -75,7 +74,7 @@ Briefly mention all the patterns that your application uses and identify where e
 - <b>Domain-Specific Language</b>: The +server.rb+ file consists of a series of Sinatra _routes_. Sinatra is a DSL for creating web applications in Ruby.
 - <b>Model-View-Controller</b>: The application follows the classical web implementation of the MVC architectural pattern. The models (+.rb+ files) and views (+.erb+ files) are stored in the corresponding +models+ and +views+ directory. The controller is contained in +server.rb+ file.
 - <b>Composite Pattern</b>: The +Game+ can has many player running the game at the same time.
-- <b>State Pattern</b>: All the +States+ implement this pattern in order to change between them  and with this, the functionality of the game.
+- <b>State Pattern</b>: All the +States+ implement this pattern in order to know the current action of the player into the game, also for identify the valid actions that the player can do in that state of the game.
 == References
 
 Mention here any consulted books or web resources. Examples:
