@@ -7,15 +7,12 @@ require 'json'
 
 require 'sequel'
 
-DB = Sequel.connect("sqlite://game.db") # in memory
+DB ||= Sequel.connect("sqlite://game.db") # in memory
 
-require_relative 'models/game'
-require_relative 'models/player'
-require_relative 'models/monster'
-require_relative 'models/room'
-require_relative 'models/movement'
-require_relative 'models/states/fighting_state'
-
+DEPENDENCIES ||= ['models/game', 'models/player', 'models/monster', 'models/room',
+                'models/movement', 'models/states/fighting_state']
+DEPENDENCIES.each { |file| also_reload file } if development?
+DEPENDENCIES.each { |file| require_relative file }
 
 enable :sessions
 set :bind, '0.0.0.0'
