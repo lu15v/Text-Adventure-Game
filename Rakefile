@@ -4,7 +4,7 @@ task :server do
   sh 'ruby -I . src/server.rb'
 end
 task :doc do
-  sh 'rdoc --exclude "public/|views/" src'
+  sh 'rdoc --main src/README.txt --exclude "public/|views/" src'
 end
 task :sandbox do
   sh 'ruby src/models/sandbox.rb'
