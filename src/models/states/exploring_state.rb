@@ -85,7 +85,7 @@ class ExploringState
     player = @game.player
     output = ""
     output << "Tally at present is #{player.score}\n"
-    output << "You have killed #{player.monsters_killed} monsters so far..\n" if rand > 0.5
+    output << "You have killed #{player.monsters_killed} monsters so far...\n" if rand > 0.5
 
     puts output
 
