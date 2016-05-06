@@ -75,7 +75,7 @@ Briefly mention all the patterns that your application uses and identify where e
 - <b>Domain-Specific Language</b>: The +server.rb+ file consists of a series of Sinatra _routes_. Sinatra is a DSL for creating web applications in Ruby.
 - <b>Model-View-Controller</b>: The application follows the classical web implementation of the MVC architectural pattern. The models (+.rb+ files) and views (+.erb+ files) are stored in the corresponding +models+ and +views+ directory. The controller is contained in +server.rb+ file.
 - <b>Composite Pattern</b>: The +Game+ can has many player running the game at the same time.
-
+- <b>State Pattern</b>: All the +States+ implement this pattern in order to change between them  and with this, the functionality of the game.
 == References
 
 Mention here any consulted books or web resources. Examples:
