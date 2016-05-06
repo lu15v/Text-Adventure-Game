@@ -55,7 +55,10 @@ post '/send_command' do
   game = session[:game]
   command = params[:command].to_sym
   puts "EXECUTING COMMAND: #{command}"
-  status[:output] = game.state.handle command
+  puts "HADNLE RESULT"
+  output = game.state.handle command
+  puts output
+  status[:output] = output
   session[:game] = game
 
   status.to_json

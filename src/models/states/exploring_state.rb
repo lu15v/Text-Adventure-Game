@@ -58,10 +58,10 @@ class ExploringState
     case command
     when :north then method = :move
     when :south then method = :move
-    when :east then method = :move
-    when :west then method = :move
-    when :up then method = :move
-    when :down then method = :move
+    when :east  then method = :move
+    when :west  then method = :move
+    when :up    then method = :move
+    when :down  then method = :move
     end
     if method == :move
       self.send method, command
@@ -112,17 +112,17 @@ class ExploringState
   def move(direction)
     movements = @game.current_room_model.movement
     if direction == :north and not movements.north
-      return puts "No exit that way"
+      return "No exit that way"
     elsif direction == :south and not movements.south
-      return puts "There is no exit south"
+      return "There is no exit south"
     elsif direction == :east and not movements.east
-      return puts "You cannot go in that direction"
+      return "You cannot go in that direction"
     elsif direction == :west and not movements.west
-      return puts "You cannot move through solid stone"
+      return "You cannot move through solid stone"
     elsif direction == :up and not movements.up
-      return puts "You cannot go up this floor"
+      return "You cannot go up this floor"
     elsif direction == :down and not movements.down
-      return puts "You cannot go down this floor"
+      return "You cannot go down this floor"
     end
 
     @game.current_room = movements.send(direction)
@@ -134,6 +134,8 @@ class ExploringState
     else
       @game.state = WinnerState.new(@game) if @game.current_room == "Exit"
     end
+
+    self.status
   end
 
   #Allows the user the probability to scape from a fight
